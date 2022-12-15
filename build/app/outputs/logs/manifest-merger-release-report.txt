@@ -3,6 +3,8 @@ application
 INJECTED from F:\Development\Flutter\weatherapp_starter_project\android\app\src\main\AndroidManifest.xml:7:4-37:19
 MERGED from [:geolocator_android] F:\Development\Flutter\weatherapp_starter_project\build\geolocator_android\intermediates\merged_manifest\release\AndroidManifest.xml:11:5-17:19
 MERGED from [:geolocator_android] F:\Development\Flutter\weatherapp_starter_project\build\geolocator_android\intermediates\merged_manifest\release\AndroidManifest.xml:11:5-17:19
+MERGED from [:url_launcher_android] F:\Development\Flutter\weatherapp_starter_project\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-14:19
+MERGED from [:url_launcher_android] F:\Development\Flutter\weatherapp_starter_project\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-14:19
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\Hammad Arshad\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:24:5-31:19
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\Hammad Arshad\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:24:5-31:19
 MERGED from [com.google.android.gms:play-services-location:20.0.0] C:\Users\Hammad Arshad\.gradle\caches\transforms-3\2d36fe3092f409c15b974a0b68b21147\transformed\jetified-play-services-location-20.0.0\AndroidManifest.xml:7:5-20
@@ -35,6 +37,9 @@ MERGED from [:shared_preferences_android] F:\Development\Flutter\weatherapp_star
 MERGED from [:geolocator_android] F:\Development\Flutter\weatherapp_starter_project\build\geolocator_android\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-19:12
 MERGED from [:modal_progress_hud_nsn] F:\Development\Flutter\weatherapp_starter_project\build\modal_progress_hud_nsn\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-9:12
 MERGED from [:geocoding] F:\Development\Flutter\weatherapp_starter_project\build\geocoding\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-9:12
+MERGED from [:sqflite] F:\Development\Flutter\weatherapp_starter_project\build\sqflite\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-9:12
+MERGED from [:fluttertoast] F:\Development\Flutter\weatherapp_starter_project\build\fluttertoast\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-9:12
+MERGED from [:url_launcher_android] F:\Development\Flutter\weatherapp_starter_project\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-16:12
 MERGED from [:path_provider_android] F:\Development\Flutter\weatherapp_starter_project\build\path_provider_android\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-9:12
 MERGED from [:restart_app] F:\Development\Flutter\weatherapp_starter_project\build\restart_app\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\Hammad Arshad\.gradle\caches\transforms-3\246793f755122fe14a5802655438cb75\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:17:1-23:12
@@ -103,6 +108,12 @@ MERGED from [:modal_progress_hud_nsn] F:\Development\Flutter\weatherapp_starter_
 MERGED from [:modal_progress_hud_nsn] F:\Development\Flutter\weatherapp_starter_project\build\modal_progress_hud_nsn\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:geocoding] F:\Development\Flutter\weatherapp_starter_project\build\geocoding\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:geocoding] F:\Development\Flutter\weatherapp_starter_project\build\geocoding\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
+MERGED from [:sqflite] F:\Development\Flutter\weatherapp_starter_project\build\sqflite\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
+MERGED from [:sqflite] F:\Development\Flutter\weatherapp_starter_project\build\sqflite\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
+MERGED from [:fluttertoast] F:\Development\Flutter\weatherapp_starter_project\build\fluttertoast\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
+MERGED from [:fluttertoast] F:\Development\Flutter\weatherapp_starter_project\build\fluttertoast\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
+MERGED from [:url_launcher_android] F:\Development\Flutter\weatherapp_starter_project\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
+MERGED from [:url_launcher_android] F:\Development\Flutter\weatherapp_starter_project\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] F:\Development\Flutter\weatherapp_starter_project\build\path_provider_android\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] F:\Development\Flutter\weatherapp_starter_project\build\path_provider_android\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:restart_app] F:\Development\Flutter\weatherapp_starter_project\build\restart_app\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
@@ -211,6 +222,14 @@ ADDED from [:geolocator_android] F:\Development\Flutter\weatherapp_starter_proje
 		ADDED from [:geolocator_android] F:\Development\Flutter\weatherapp_starter_project\build\geolocator_android\intermediates\merged_manifest\release\AndroidManifest.xml:16:13-53
 	android:name
 		ADDED from [:geolocator_android] F:\Development\Flutter\weatherapp_starter_project\build\geolocator_android\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-77
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher_android] F:\Development\Flutter\weatherapp_starter_project\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:10:9-13:74
+	android:exported
+		ADDED from [:url_launcher_android] F:\Development\Flutter\weatherapp_starter_project\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:12:13-37
+	android:theme
+		ADDED from [:url_launcher_android] F:\Development\Flutter\weatherapp_starter_project\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-71
+	android:name
+		ADDED from [:url_launcher_android] F:\Development\Flutter\weatherapp_starter_project\build\url_launcher_android\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-74
 uses-library#androidx.window.extensions
 ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\Hammad Arshad\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
 	android:required

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:my_widgets/my_widgets.dart';
 import '../../../../utils/utils.dart';
 import 'current_model.dart';
 
@@ -20,7 +20,7 @@ class CurrentWeatherView extends StatelessWidget {
           height: 20,
         ),
 
-        // more details - windspeed, humadity, clouds
+        // more details - winds peed, humidity, clouds
         CurrentWeatherMoreDetailsWidget(),
       ],
     );

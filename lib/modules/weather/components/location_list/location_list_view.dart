@@ -1,17 +1,14 @@
 import 'package:WeatherApp/modules/weather/components/location_list/location_list_logic.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class LocationListView extends StatelessWidget {
   LocationListView({Key? key}) : super(key: key);
 
-  final locationListLogic = Get.put(LocationListLogic());
-
   @override
   Widget build(BuildContext context) {
     Widget _dialog(BuildContext context, latitudeField, longitudeField,
-        GlobalKey<FormState> formKey) {
+        GlobalKey<FormState> formKey, locations) {
       return AlertDialog(
         title: const Text('Add Coordinates'),
         content: Form(
@@ -61,12 +58,12 @@ class LocationListView extends StatelessWidget {
             child: const Text('Cancel'),
             onPressed: () {
               Navigator.pop(context);
-              formKey.currentState?.reset();
+              // formKey.currentState?.reset();
             },
           ),
           TextButton(
             onPressed: () {
-              locationListLogic.onSubmit(context);
+              locations.onSubmit(context);
             },
             child: const Text(
               "Okay",
@@ -78,7 +75,7 @@ class LocationListView extends StatelessWidget {
     }
 
     void _scaleDialog(
-        latitudeField, longitudeField, GlobalKey<FormState> formKey) {
+        latitudeField, longitudeField, GlobalKey<FormState> formKey, locations) {
       showGeneralDialog(
         context: context,
         pageBuilder: (ctx, a1, a2) {
@@ -88,7 +85,7 @@ class LocationListView extends StatelessWidget {
           var curve = Curves.easeInOut.transform(a1.value);
           return Transform.scale(
             scale: curve,
-            child: _dialog(ctx, latitudeField, longitudeField, formKey),
+            child: _dialog(ctx, latitudeField, longitudeField, formKey, locations),
           );
         },
         transitionDuration: const Duration(milliseconds: 300),
@@ -107,32 +104,47 @@ class LocationListView extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Expanded(
-                    child: ListView.builder(
+                    child: locations.locationList.isNotEmpty ? ListView.builder(
                       itemCount: locations.locationList.length,
                       itemBuilder: (context, i) {
-                        print('length ${locations.locationList.length}');
                         return Card(
                           child: ListTile(
                             title: Text(locations.locationList[i]['city']),
-                            subtitle: Text(locations.locationList[i]['country']),
-                            trailing: const Icon(Icons.delete),
+                            subtitle:
+                                Text(locations.locationList[i]['country']),
+                            trailing: i == 0 ? null : const Icon(Icons.delete),
                             onTap: () {
-                              showDialog(context: context, builder: (BuildContext context) {
-                                return AlertDialog(
-                                  title: const Text("Confirm"),
-                                  content: const Text("Are you really want to delete?"),
-                                  actions: [
-                                    TextButton(onPressed: () {
-                                      Navigator.of(context).pop();
-                                    }, child: const Text('Cancel')),
-                                    TextButton(onPressed: () {}, child: const Text('Yes', style: TextStyle(color: Colors.red),))
-                                  ],
-                                );
-                              });
+                              if(i != 0) {
+                                showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      return AlertDialog(
+                                        title: const Text("Confirm"),
+                                        content: const Text(
+                                            "Are you really want to delete?"),
+                                        actions: [
+                                          TextButton(
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: const Text('Cancel')),
+                                          TextButton(
+                                              onPressed: () => locations.onDeleteLocation(locations.locationList[i], context),
+                                              child: const Text(
+                                                'Yes',
+                                                style:
+                                                TextStyle(color: Colors.red),
+                                              ))
+                                        ],
+                                      );
+                                    });
+                              }
                             },
                           ),
                         );
                       },
+                    ) : Center(
+                      child: const Text('No data found'),
                     ),
                   ),
                   Row(
@@ -144,7 +156,8 @@ class LocationListView extends StatelessWidget {
                           onPressed: () => _scaleDialog(
                               locations.latitudeFieldController(),
                               locations.longitudeFieldController(),
-                              locations.formKey),
+                              locations.formKey,
+                              locations),
                           child: const Text("Add Location"),
                         ),
                       )

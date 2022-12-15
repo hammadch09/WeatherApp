@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import '../../../../utils/utils.dart';
-import 'hourly_logic.dart';
 import 'hourly_model.dart';
 
 class HourlyView extends StatelessWidget {
@@ -12,26 +10,22 @@ class HourlyView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<HourlyLogic>(
-        init: HourlyLogic(),
-        builder: (hourly) {
-          return Column(
-            children: [
-              Container(
-                margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                alignment: Alignment.topCenter,
-                child: const Text(
-                  'Today',
-                  style: TextStyle(fontSize: 16),
-                ),
-              ),
-              hourlyList(hourly),
-            ],
-          );
-        });
+    return Column(
+      children: [
+        Container(
+          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+          alignment: Alignment.topCenter,
+          child: const Text(
+            'Today',
+            style: TextStyle(fontSize: 16),
+          ),
+        ),
+        hourlyList(),
+      ],
+    );
   }
 
-  Widget hourlyList(HourlyLogic hourly) {
+  Widget hourlyList() {
     return Container(
       height: 160,
       padding: const EdgeInsets.only(
@@ -44,30 +38,26 @@ class HourlyView extends StatelessWidget {
             ? 12
             : weatherDataHourly.hourly.length,
         itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () => hourly.onCardIndex(index),
-            child: Container(
-              width: 90,
-              margin: const EdgeInsets.only(left: 20, right: 5),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    offset: const Offset(0.5, 0),
-                    blurRadius: 30,
-                    spreadRadius: 1,
-                    color: Clr.dividerLine.withAlpha(150),
-                  )
-                ],
-              ),
-              child: HourlyDetail(
-                temp: weatherDataHourly.hourly[index].temp!,
-                timeStamp: weatherDataHourly.hourly[index].dt!,
-                weatherIcon:
-                weatherDataHourly.hourly[index].weather![0].icon!,
-                cardIndex: hourly.currentIndex.value,
-                index: index,
-              ),
+          return Container(
+            width: 90,
+            margin: const EdgeInsets.only(left: 20, right: 5),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  offset: const Offset(0.5, 0),
+                  blurRadius: 30,
+                  spreadRadius: 1,
+                  color: Clr.dividerLine.withAlpha(150),
+                )
+              ],
+            ),
+            child: HourlyDetail(
+              temp: weatherDataHourly.hourly[index].temp!,
+              timeStamp: weatherDataHourly.hourly[index].dt!,
+              weatherIcon:
+              weatherDataHourly.hourly[index].weather![0].icon!,
+              index: index,
             ),
           );
         },
@@ -82,7 +72,6 @@ class HourlyDetail extends StatelessWidget {
   int timeStamp;
   String weatherIcon;
   int index;
-  int cardIndex;
 
   HourlyDetail({
     super.key,
@@ -90,7 +79,6 @@ class HourlyDetail extends StatelessWidget {
     required this.temp,
     required this.weatherIcon,
     required this.index,
-    required this.cardIndex,
   });
 
   String getTime(final timeStamp) {

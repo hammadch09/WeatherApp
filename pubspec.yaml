@@ -42,6 +42,7 @@ dependencies:
   geocode: ^1.0.2
   localstorage: ^4.0.0+1
   shared_preferences: ^2.0.15
+  my_widgets: ^0.0.26
 
 
 dev_dependencies:

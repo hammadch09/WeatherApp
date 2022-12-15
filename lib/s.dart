@@ -3,6 +3,7 @@ import 'package:WeatherApp/utils/utils.dart';
 
 class S {
   static const apikey = "179454a4510b10d79e818051f341e531";
+  static const locationListKey = 'location_list';
 }
 
 String sApiUrl(lat, long) {

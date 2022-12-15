@@ -56,6 +56,45 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="F:\Development\Flutter\weatherapp_starter_project\android@@:sqflite::release"
+      jars="F:\Development\Flutter\weatherapp_starter_project\build\sqflite\.transforms\a86aad540706d99ee77e1ff7889e5eea\transformed\out\jars\classes.jar"
+      resolved="com.tekartik.sqflite:sqflite:unspecified"
+      folder="F:\Development\Flutter\weatherapp_starter_project\build\sqflite\.transforms\a86aad540706d99ee77e1ff7889e5eea\transformed\out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="F:\Development\Flutter\weatherapp_starter_project\android@@:fluttertoast::release"
+      jars="F:\Development\Flutter\weatherapp_starter_project\build\fluttertoast\.transforms\3bc42cd014196b55e30719cff5a34a87\transformed\out\jars\classes.jar"
+      resolved="com.example.FlutterToast:fluttertoast:unspecified"
+      folder="F:\Development\Flutter\weatherapp_starter_project\build\fluttertoast\.transforms\3bc42cd014196b55e30719cff5a34a87\transformed\out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="F:\Development\Flutter\weatherapp_starter_project\android@@:url_launcher_android::release"
+      jars="F:\Development\Flutter\weatherapp_starter_project\build\url_launcher_android\.transforms\ee48180713dc81ce2c3472c0b50096ec\transformed\out\jars\classes.jar"
+      resolved="io.flutter.plugins.urllauncher:url_launcher_android:unspecified"
+      folder="F:\Development\Flutter\weatherapp_starter_project\build\url_launcher_android\.transforms\ee48180713dc81ce2c3472c0b50096ec\transformed\out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="F:\Development\Flutter\weatherapp_starter_project\android@@:path_provider_android::release"
       jars="F:\Development\Flutter\weatherapp_starter_project\build\path_provider_android\.transforms\9a77b0209c6c89433782100c64412c8b\transformed\out\jars\classes.jar"
       resolved="io.flutter.plugins.pathprovider:path_provider_android:unspecified"

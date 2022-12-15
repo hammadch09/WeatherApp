@@ -4175,6 +4175,98 @@ com.google.common.util.concurrent.ListenableFuture
 com.google.firebase.FirebaseApiNotAvailableException
 com.google.firebase.FirebaseException
 com.google.firebase.FirebaseExceptionMapper
+com.tekartik.sqflite.BuildConfig
+com.tekartik.sqflite.Constant:
+    static final java.lang.String CMD_GET
+    static final java.lang.String ERROR_BAD_PARAM
+    static final java.lang.String ERROR_DATABASE_CLOSED
+    static final java.lang.String ERROR_OPEN_FAILED
+    static final java.lang.String MEMORY_DATABASE_PATH
+    public static final java.lang.String METHOD_BATCH
+    public static final java.lang.String METHOD_CLOSE_DATABASE
+    public static final java.lang.String METHOD_DEBUG
+    public static final java.lang.String METHOD_DEBUG_MODE
+    public static final java.lang.String METHOD_DELETE_DATABASE
+    public static final java.lang.String METHOD_EXECUTE
+    public static final java.lang.String METHOD_GET_DATABASES_PATH
+    public static final java.lang.String METHOD_GET_PLATFORM_VERSION
+    public static final java.lang.String METHOD_INSERT
+    public static final java.lang.String METHOD_OPEN_DATABASE
+    public static final java.lang.String METHOD_OPTIONS
+    public static final java.lang.String METHOD_QUERY
+    public static final java.lang.String METHOD_QUERY_CURSOR_NEXT
+    public static final java.lang.String METHOD_UPDATE
+    public static final java.lang.String PARAM_CANCEL
+    static final java.lang.String PARAM_CMD
+    public static final java.lang.String PARAM_COLUMNS
+    public static final java.lang.String PARAM_CONTINUE_OR_ERROR
+    public static final java.lang.String PARAM_CURSOR_ID
+    public static final java.lang.String PARAM_CURSOR_PAGE_SIZE
+    public static final java.lang.String PARAM_ERROR
+    public static final java.lang.String PARAM_ERROR_CODE
+    public static final java.lang.String PARAM_ERROR_DATA
+    public static final java.lang.String PARAM_ERROR_MESSAGE
+    static final java.lang.String PARAM_ID
+    public static final java.lang.String PARAM_IN_TRANSACTION_CHANGE
+    static final java.lang.String PARAM_LOG_LEVEL
+    public static final java.lang.String PARAM_METHOD
+    public static final java.lang.String PARAM_NO_RESULT
+    static final java.lang.String PARAM_OPERATIONS
+    static final java.lang.String PARAM_PATH
+    static final java.lang.String PARAM_READ_ONLY
+    public static final java.lang.String PARAM_RECOVERED
+    public static final java.lang.String PARAM_RECOVERED_IN_TRANSACTION
+    public static final java.lang.String PARAM_RESULT
+    public static final java.lang.String PARAM_ROWS
+    static final java.lang.String PARAM_SINGLE_INSTANCE
+    public static final java.lang.String PARAM_SQL
+    public static final java.lang.String PARAM_SQL_ARGUMENTS
+    static final java.lang.String PARAM_THREAD_COUNT
+    static final java.lang.String PARAM_THREAD_PRIORITY
+    public static final java.lang.String PARAM_TRANSACTION_ID
+    public static final java.lang.String PLUGIN_KEY
+    static final java.lang.String SQLITE_ERROR
+    public static final java.lang.String TAG
+    public static final int TRANSACTION_ID_FORCE
+    public void <init>()
+com.tekartik.sqflite.Database:
+    static final boolean WAL_ENABLED_BY_DEFAULT
+    private static final java.lang.String WAL_ENABLED_META_NAME
+    public boolean enableWriteAheadLogging()
+com.tekartik.sqflite.LogLevel:
+    static final int none
+    static final int sql
+    static final int verbose
+    public void <init>()
+com.tekartik.sqflite.R$attr
+com.tekartik.sqflite.R$color
+com.tekartik.sqflite.R$dimen
+com.tekartik.sqflite.R$drawable
+com.tekartik.sqflite.R$id
+com.tekartik.sqflite.R$integer
+com.tekartik.sqflite.R$layout
+com.tekartik.sqflite.R$string
+com.tekartik.sqflite.R$style
+com.tekartik.sqflite.R$styleable
+com.tekartik.sqflite.R
+com.tekartik.sqflite.SqflitePlugin:
+    public void <init>(android.content.Context)
+    private static java.util.Map fixMap(java.util.Map)
+    private android.content.Context getContext()
+    public static void registerWith(io.flutter.plugin.common.PluginRegistry$Registrar)
+    private static java.lang.String toString(java.lang.Object)
+com.tekartik.sqflite.Utils:
+    public void <init>()
+com.tekartik.sqflite.dev.Debug:
+    public void <init>()
+    public static void devLog(java.lang.String,java.lang.String)
+com.tekartik.sqflite.operation.BaseReadOperation:
+    protected abstract com.tekartik.sqflite.operation.OperationResult getOperationResult()
+com.tekartik.sqflite.operation.Operation:
+    public abstract boolean getContinueOnError()
+com.tekartik.sqflite.operation.OperationRunnable
+com.tekartik.sqflite.operation.SqlErrorInfo:
+    public void <init>()
 com.walle.modal_progress_hud_nsn.BuildConfig
 com.walle.modal_progress_hud_nsn.R$attr
 com.walle.modal_progress_hud_nsn.R$color
@@ -4642,8 +4734,6 @@ io.flutter.plugin.common.FlutterException:
 io.flutter.plugin.common.JSONUtil:
     private void <init>()
     public static java.lang.Object unwrap(java.lang.Object)
-io.flutter.plugin.common.MethodCall:
-    public boolean hasArgument(java.lang.String)
 io.flutter.plugin.common.MethodChannel:
     private static final java.lang.String TAG
     public void resizeChannelBuffer(int)
@@ -4769,6 +4859,25 @@ io.flutter.plugins.sharedpreferences.R
 io.flutter.plugins.sharedpreferences.SharedPreferencesPlugin:
     private static final java.lang.String CHANNEL_NAME
     public static void registerWith(io.flutter.plugin.common.PluginRegistry$Registrar)
+io.flutter.plugins.urllauncher.BuildConfig
+io.flutter.plugins.urllauncher.MethodCallHandlerImpl:
+    private static final java.lang.String TAG
+io.flutter.plugins.urllauncher.R$attr
+io.flutter.plugins.urllauncher.R$color
+io.flutter.plugins.urllauncher.R$dimen
+io.flutter.plugins.urllauncher.R$drawable
+io.flutter.plugins.urllauncher.R$id
+io.flutter.plugins.urllauncher.R$integer
+io.flutter.plugins.urllauncher.R$layout
+io.flutter.plugins.urllauncher.R$string
+io.flutter.plugins.urllauncher.R$style
+io.flutter.plugins.urllauncher.R$styleable
+io.flutter.plugins.urllauncher.R
+io.flutter.plugins.urllauncher.UrlLauncher:
+    private static final java.lang.String TAG
+io.flutter.plugins.urllauncher.UrlLauncherPlugin:
+    private static final java.lang.String TAG
+    public static void registerWith(io.flutter.plugin.common.PluginRegistry$Registrar)
 io.flutter.util.HandlerCompat:
     public void <init>()
 io.flutter.util.PathUtils:
@@ -4816,6 +4925,119 @@ io.flutter.view.TextureRegistry:
     public abstract io.flutter.view.TextureRegistry$SurfaceTextureEntry registerSurfaceTexture(android.graphics.SurfaceTexture)
 io.flutter.view.VsyncWaiter:
     public static void reset()
+io.github.ponnamkarthik.toast.fluttertoast.BuildConfig
+io.github.ponnamkarthik.toast.fluttertoast.MethodCallHandlerImpl:
+    public final android.content.Context getContext()
+    public final void setContext(android.content.Context)
+io.github.ponnamkarthik.toast.fluttertoast.R$attr
+io.github.ponnamkarthik.toast.fluttertoast.R$color
+io.github.ponnamkarthik.toast.fluttertoast.R$dimen
+io.github.ponnamkarthik.toast.fluttertoast.R$drawable:
+    public static final int notification_action_background
+    public static final int notification_bg
+    public static final int notification_bg_low
+    public static final int notification_bg_low_normal
+    public static final int notification_bg_low_pressed
+    public static final int notification_bg_normal
+    public static final int notification_bg_normal_pressed
+    public static final int notification_icon_background
+    public static final int notification_template_icon_bg
+    public static final int notification_template_icon_low_bg
+    public static final int notification_tile_bg
+    public static final int notify_panel_notification_icon_bg
+    public static final int toast_bg
+    private void <init>()
+io.github.ponnamkarthik.toast.fluttertoast.R$id:
+    public static final int accessibility_action_clickable_span
+    public static final int accessibility_custom_action_0
+    public static final int accessibility_custom_action_1
+    public static final int accessibility_custom_action_10
+    public static final int accessibility_custom_action_11
+    public static final int accessibility_custom_action_12
+    public static final int accessibility_custom_action_13
+    public static final int accessibility_custom_action_14
+    public static final int accessibility_custom_action_15
+    public static final int accessibility_custom_action_16
+    public static final int accessibility_custom_action_17
+    public static final int accessibility_custom_action_18
+    public static final int accessibility_custom_action_19
+    public static final int accessibility_custom_action_2
+    public static final int accessibility_custom_action_20
+    public static final int accessibility_custom_action_21
+    public static final int accessibility_custom_action_22
+    public static final int accessibility_custom_action_23
+    public static final int accessibility_custom_action_24
+    public static final int accessibility_custom_action_25
+    public static final int accessibility_custom_action_26
+    public static final int accessibility_custom_action_27
+    public static final int accessibility_custom_action_28
+    public static final int accessibility_custom_action_29
+    public static final int accessibility_custom_action_3
+    public static final int accessibility_custom_action_30
+    public static final int accessibility_custom_action_31
+    public static final int accessibility_custom_action_4
+    public static final int accessibility_custom_action_5
+    public static final int accessibility_custom_action_6
+    public static final int accessibility_custom_action_7
+    public static final int accessibility_custom_action_8
+    public static final int accessibility_custom_action_9
+    public static final int action_container
+    public static final int action_divider
+    public static final int action_image
+    public static final int action_text
+    public static final int actions
+    public static final int androidx_window_activity_scope
+    public static final int async
+    public static final int blocking
+    public static final int chronometer
+    public static final int dialog_button
+    public static final int forever
+    public static final int icon
+    public static final int icon_group
+    public static final int info
+    public static final int italic
+    public static final int line1
+    public static final int line3
+    public static final int locale
+    public static final int ltr
+    public static final int normal
+    public static final int notification_background
+    public static final int notification_main_column
+    public static final int notification_main_column_container
+    public static final int right_icon
+    public static final int right_side
+    public static final int rtl
+    public static final int tag_accessibility_actions
+    public static final int tag_accessibility_clickable_spans
+    public static final int tag_accessibility_heading
+    public static final int tag_accessibility_pane_title
+    public static final int tag_on_apply_window_listener
+    public static final int tag_on_receive_content_listener
+    public static final int tag_on_receive_content_mime_types
+    public static final int tag_screen_reader_focusable
+    public static final int tag_state_description
+    public static final int tag_transition_group
+    public static final int tag_unhandled_key_event_manager
+    public static final int tag_unhandled_key_listeners
+    public static final int tag_window_insets_animation_callback
+    public static final int text2
+    public static final int time
+    public static final int title
+    private void <init>()
+io.github.ponnamkarthik.toast.fluttertoast.R$integer
+io.github.ponnamkarthik.toast.fluttertoast.R$layout:
+    public static final int custom_dialog
+    public static final int notification_action
+    public static final int notification_action_tombstone
+    public static final int notification_template_custom_big
+    public static final int notification_template_icon_group
+    public static final int notification_template_part_chronometer
+    public static final int notification_template_part_time
+    private void <init>()
+io.github.ponnamkarthik.toast.fluttertoast.R$string
+io.github.ponnamkarthik.toast.fluttertoast.R$style
+io.github.ponnamkarthik.toast.fluttertoast.R$styleable
+io.github.ponnamkarthik.toast.fluttertoast.R
 kotlin.ArrayIntrinsicsKt
 kotlin.BuilderInference
 kotlin.CharCodeJVMKt

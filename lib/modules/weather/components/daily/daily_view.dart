@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import '../../../../utils/utils.dart';
 import 'daily_model.dart';
 
@@ -18,7 +17,7 @@ class DailyForecastView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 400,
+      height: 490,
       margin: const EdgeInsets.all(20),
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
@@ -46,9 +45,10 @@ class DailyForecastView extends StatelessWidget {
 
   Widget dailyList() {
     return SizedBox(
-      height: 300,
+      height: 430,
       child: ListView.builder(
-        scrollDirection: Axis.vertical,
+        physics: const NeverScrollableScrollPhysics(),
+        // scrollDirection: Axis.vertical,
         itemCount: weatherDataDaily.daily.length > 7
             ? 7
             : weatherDataDaily.daily.length,

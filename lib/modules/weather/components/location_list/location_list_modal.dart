@@ -1,11 +1,12 @@
 import 'dart:convert';
 
 class AddressModel {
-  AddressModel(
-      {this.city,
+  AddressModel({
+      this.city,
       this.country,
       required this.latitude,
-      required this.longitude});
+      required this.longitude
+  });
 
   factory AddressModel.fromJson(Map<String, dynamic> jsonData) {
     return AddressModel(

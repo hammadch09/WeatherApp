@@ -1,7 +1,10 @@
-import 'package:WeatherApp/modules/weather/components/location_list/location_list_view.dart';
 import 'package:WeatherApp/modules/weather/weather_logic.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_widgets/widgets/dividers.dart';
+import 'package:my_widgets/widgets/get_images.dart';
+import 'package:my_widgets/widgets/loading.dart';
+import 'package:my_widgets/widgets/txt.dart';
 
 import '../../utils/utils.dart';
 import 'components/comfort_level/comfort_level_view.dart';
@@ -13,9 +16,6 @@ import 'components/hourly/hourly_view.dart';
 class WeatherView extends StatelessWidget {
   const WeatherView({super.key});
 
-  // call
-  // final GlobalController globalController =
-  // Get.put(GlobalController(), permanent: true);
   @override
   Widget build(BuildContext context) {
     return GetBuilder<WeatherLogic>(
@@ -23,19 +23,22 @@ class WeatherView extends StatelessWidget {
         builder: (weather) {
           return Scaffold(
             appBar: AppBar(
-              title: const Text("Weather Forecast"),
+              title: const Txt(
+                "Weather Forecast",
+                textColor: Colors.white,
+                fontSize: 23,
+              ),
               actions: <Widget>[
                 Padding(
-                    padding: const EdgeInsets.only(right: 20.0),
-                    child: GestureDetector(
-                      onTap: () {
-                        Get.to(LocationListView());
-                      },
-                      child: const Icon(
-                        Icons.add,
-                        size: 26.0,
-                      ),
-                    )),
+                  padding: const EdgeInsets.only(right: 20.0),
+                  child: GestureDetector(
+                    onTap: weather.onAddTap,
+                    child: const Icon(
+                      Icons.add,
+                      size: 26.0,
+                    ),
+                  ),
+                ),
               ],
             ),
             body: SafeArea(
@@ -43,13 +46,14 @@ class WeatherView extends StatelessWidget {
                   ? Center(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/icons/clouds.png',
-                            height: 200,
-                            width: 200,
+                        children: const [
+                          GetImage(
+                            imagePath: 'assets/icons/clouds.png',
+                            width: 120,
+                            height: 120,
+                            isAssets: true,
                           ),
-                          const CircularProgressIndicator()
+                          LoadingPro(valueColor: Colors.blue,)
                         ],
                       ),
                     )
@@ -67,17 +71,11 @@ class WeatherView extends StatelessWidget {
                               HeaderView(
                                   city: weather.locationList[i]['city']
                                       .toString()),
-                              // for our current temp ('current')
-                              // CurrentWeatherView(
-                              //   weatherDataCurrent: weather
-                              //       .getWeatherData()
-                              //       .getCurrentWeatherData(),
-                              // ),
                               CurrentWeatherView(
                                 weatherDataCurrent: weather.weatherDataList[i]
                                     .getCurrentWeatherData(),
                               ),
-                              const SizedBox(
+                              const MyDivider(
                                 height: 20,
                               ),
                               // for our hourly temp ('hourly')
@@ -93,7 +91,7 @@ class WeatherView extends StatelessWidget {
                                 height: 1,
                                 color: Clr.dividerLine,
                               ),
-                              const SizedBox(
+                              const MyDivider(
                                 height: 10,
                               ),
                               ComfortLevelView(
