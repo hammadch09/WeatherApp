@@ -95,7 +95,7 @@ class WeatherLogic extends GetxController {
         }
 
         isLoading = false;
-        Get.off(() => const WeatherView());
+        // Get.off(() => const WeatherView());
         update();
 
       });
@@ -120,14 +120,13 @@ class WeatherLogic extends GetxController {
 
 
   Future<void> onAddTap() async {
-    print(locationList);
     await Get.to(()=> LocationListView());
     var updateLocationList = await sharedPref.read(S.locationListKey);
-    if(updateLocationList.length != locationList.length) {
-      weatherDataList = [];
-      isLoading = true;
-      getLocation();
-      update();
-    }
+    // if(updateLocationList.length != locationList.length) {
+    //   weatherDataList = [];
+    //   isLoading = true;
+    //   getLocation();
+    //   update();
+    // }
   }
 }

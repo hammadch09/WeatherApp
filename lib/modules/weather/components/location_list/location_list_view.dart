@@ -2,8 +2,12 @@ import 'package:WeatherApp/modules/weather/components/location_list/location_lis
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../weather_logic.dart';
+
 class LocationListView extends StatelessWidget {
   LocationListView({Key? key}) : super(key: key);
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -74,8 +78,8 @@ class LocationListView extends StatelessWidget {
       );
     }
 
-    void _scaleDialog(
-        latitudeField, longitudeField, GlobalKey<FormState> formKey, locations) {
+    void _scaleDialog(latitudeField, longitudeField,
+        GlobalKey<FormState> formKey, locations) {
       showGeneralDialog(
         context: context,
         pageBuilder: (ctx, a1, a2) {
@@ -85,7 +89,8 @@ class LocationListView extends StatelessWidget {
           var curve = Curves.easeInOut.transform(a1.value);
           return Transform.scale(
             scale: curve,
-            child: _dialog(ctx, latitudeField, longitudeField, formKey, locations),
+            child:
+                _dialog(ctx, latitudeField, longitudeField, formKey, locations),
           );
         },
         transitionDuration: const Duration(milliseconds: 300),
@@ -95,6 +100,7 @@ class LocationListView extends StatelessWidget {
     return GetBuilder<LocationListLogic>(
         init: LocationListLogic(),
         builder: (locations) {
+          print('isloading Location list ${locations.weatherLogic.weatherDataList}');
           print(locations.locationList);
           return Scaffold(
             appBar: AppBar(
@@ -104,48 +110,69 @@ class LocationListView extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Expanded(
-                    child: locations.locationList.isNotEmpty ? ListView.builder(
-                      itemCount: locations.locationList.length,
-                      itemBuilder: (context, i) {
-                        return Card(
-                          child: ListTile(
-                            title: Text(locations.locationList[i]['city']),
-                            subtitle:
-                                Text(locations.locationList[i]['country']),
-                            trailing: i == 0 ? null : const Icon(Icons.delete),
-                            onTap: () {
-                              if(i != 0) {
-                                showDialog(
-                                    context: context,
-                                    builder: (BuildContext context) {
-                                      return AlertDialog(
-                                        title: const Text("Confirm"),
-                                        content: const Text(
-                                            "Are you really want to delete?"),
-                                        actions: [
-                                          TextButton(
-                                              onPressed: () {
-                                                Navigator.of(context).pop();
-                                              },
-                                              child: const Text('Cancel')),
-                                          TextButton(
-                                              onPressed: () => locations.onDeleteLocation(locations.locationList[i], context),
-                                              child: const Text(
-                                                'Yes',
-                                                style:
-                                                TextStyle(color: Colors.red),
-                                              ))
-                                        ],
-                                      );
-                                    });
-                              }
+                    child: locations.locationList.isNotEmpty
+                        ? ListView.builder(
+                            itemCount: locations.locationList.length,
+                            itemBuilder: (context, i) {
+                              return Card(
+                                child: ListTile(
+                                  title:
+                                      Text(locations.locationList[i]['city']),
+                                  subtitle: Text(
+                                      locations.locationList[i]['country']),
+                                  trailing: i == 0
+                                      ? null
+                                      : GestureDetector(
+                                          child: const Icon(
+                                            Icons.delete,
+                                            color: Colors.red,
+                                          ),
+                                          onTap: () {
+                                            if (i != 0) {
+                                              showDialog(
+                                                  context: context,
+                                                  builder:
+                                                      (BuildContext context) {
+                                                    return AlertDialog(
+                                                      title:
+                                                          const Text("Confirm"),
+                                                      content: const Text(
+                                                          "Are you really want to delete?"),
+                                                      actions: [
+                                                        TextButton(
+                                                            onPressed: () {
+                                                              Navigator.of(
+                                                                      context)
+                                                                  .pop();
+                                                            },
+                                                            child: const Text(
+                                                                'Cancel')),
+                                                        TextButton(
+                                                          onPressed: () => locations
+                                                              .onDeleteLocation(
+                                                                  locations
+                                                                      .locationList[i],
+                                                                  context),
+                                                          child: const Text(
+                                                            'Yes',
+                                                            style: TextStyle(
+                                                                color:
+                                                                    Colors.red),
+                                                          ),
+                                                        )
+                                                      ],
+                                                    );
+                                                  });
+                                            }
+                                          },
+                                        ),
+                                ),
+                              );
                             },
+                          )
+                        : Center(
+                            child: const Text('No data found'),
                           ),
-                        );
-                      },
-                    ) : Center(
-                      child: const Text('No data found'),
-                    ),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,

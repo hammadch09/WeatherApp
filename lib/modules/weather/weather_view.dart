@@ -21,7 +21,9 @@ class WeatherView extends StatelessWidget {
     return GetBuilder<WeatherLogic>(
         init: WeatherLogic(),
         builder: (weather) {
+
           return Scaffold(
+
             appBar: AppBar(
               title: const Txt(
                 "Weather Forecast",
@@ -44,65 +46,63 @@ class WeatherView extends StatelessWidget {
             body: SafeArea(
               child: weather.checkLoading() == true
                   ? Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          GetImage(
-                            imagePath: 'assets/icons/clouds.png',
-                            width: 120,
-                            height: 120,
-                            isAssets: true,
-                          ),
-                          LoadingPro(valueColor: Colors.blue,)
-                        ],
-                      ),
-                    )
-                  : PageView.builder(
-                      itemCount: weather.weatherDataList.length,
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, i) {
-                        return Center(
-                          child: ListView(
-                            scrollDirection: Axis.vertical,
-                            children: [
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              HeaderView(
-                                  city: weather.locationList[i]['city']
-                                      .toString()),
-                              CurrentWeatherView(
-                                weatherDataCurrent: weather.weatherDataList[i]
-                                    .getCurrentWeatherData(),
-                              ),
-                              const MyDivider(
-                                height: 20,
-                              ),
-                              // for our hourly temp ('hourly')
-                              HourlyView(
-                                weatherDataHourly: weather.weatherDataList[i]
-                                    .getHourlyWeatherData(),
-                              ),
-                              DailyForecastView(
-                                weatherDataDaily: weather.weatherDataList[i]
-                                    .getDailyWeatherData(),
-                              ),
-                              Container(
-                                height: 1,
-                                color: Clr.dividerLine,
-                              ),
-                              const MyDivider(
-                                height: 10,
-                              ),
-                              ComfortLevelView(
-                                weatherDataCurrent: weather.weatherDataList[i]
-                                    .getCurrentWeatherData(),
-                              )
-                            ],
-                          ),
-                        );
-                      },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    GetImage(
+                      imagePath: 'assets/icons/clouds.png',
+                      width: 120,
+                      height: 120,
+                      isAssets: true,
                     ),
+                    LoadingPro(valueColor: Colors.blue,)
+                  ],
+                ),
+              )
+                  : PageView.builder(
+                itemCount: weather.weatherDataList.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, i) {
+                  return Center(
+                    child: ListView(
+                      scrollDirection: Axis.vertical,
+                      children: [
+                        const MyDivider(height: 5),
+                        HeaderView(
+                            city: weather.locationList[i]['city']
+                                .toString()),
+                        CurrentWeatherView(
+                          weatherDataCurrent: weather.weatherDataList[i]
+                              .getCurrentWeatherData(),
+                        ),
+                        const MyDivider(
+                          height: 20,
+                        ),
+                        // for our hourly temp ('hourly')
+                        HourlyView(
+                          weatherDataHourly: weather.weatherDataList[i]
+                              .getHourlyWeatherData(),
+                        ),
+                        DailyForecastView(
+                          weatherDataDaily: weather.weatherDataList[i]
+                              .getDailyWeatherData(),
+                        ),
+                        Container(
+                          height: 1,
+                          color: Clr.dividerLine,
+                        ),
+                        const MyDivider(
+                          height: 10,
+                        ),
+                        ComfortLevelView(
+                          weatherDataCurrent: weather.weatherDataList[i]
+                              .getCurrentWeatherData(),
+                        )
+                      ],
+                    ),
+                  );
+                },
+              ),
             ),
           );
         });

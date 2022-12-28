@@ -32,13 +32,13 @@ class _PermissionStaticViewState extends State<PermissionStaticView> with Widget
     super.didChangeAppLifecycleState(state);
   }
 
-  final weatherLogic = Get.put(WeatherLogic());
+  // final weatherLogic = Get.put(WeatherLogic());
 
   void manageLifecycleState(AppLifecycleState state) async {
     switch (state) {
       case AppLifecycleState.resumed:
         Get.off(const LoaderView());
-        await weatherLogic.getLocation();
+        // await weatherLogic.getLocation();
         break;
       case AppLifecycleState.inactive:
         break;
